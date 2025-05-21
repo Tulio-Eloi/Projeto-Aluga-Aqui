@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `aluga_aqui`.`clientes` (
   `endereco_clientes` VARCHAR(45) NOT NULL,
   `cpf_clientes` VARCHAR(14) NOT NULL,
   PRIMARY KEY (`id_clientes`),
-  UNIQUE INDEX `cpf_clientes_UNIQUE` (`cpf_clientes` ASC) VISIBLE)
+  UNIQUE INDEX `cpf_clientes_UNIQUE` (`cpf_clientes` ASC))
 ENGINE = InnoDB;
 
 
@@ -60,13 +60,12 @@ CREATE TABLE IF NOT EXISTS `aluga_aqui`.`alugueis` (
   `data_inicio_alugueis` DATE NOT NULL,
   `data_fim_alugueis` DATE NOT NULL,
   `valor_total_alugueis` DECIMAL(10,2) NOT NULL,
-  `status` VARCHAR(45) NOT NULL,
   `observacoes_alugueis` VARCHAR(45) NULL,
   `carros_id_carros` INT NOT NULL,
   `clientes_id_clientes` INT NOT NULL,
   PRIMARY KEY (`id_alugueis`),
-  INDEX `fk_alugueis_carros_idx` (`carros_id_carros` ASC) VISIBLE,
-  INDEX `fk_alugueis_clientes1_idx` (`clientes_id_clientes` ASC) VISIBLE,
+  INDEX `fk_alugueis_carros_idx` (`carros_id_carros` ASC),
+  INDEX `fk_alugueis_clientes1_idx` (`clientes_id_clientes` ASC),
   CONSTRAINT `fk_alugueis_carros`
     FOREIGN KEY (`carros_id_carros`)
     REFERENCES `aluga_aqui`.`carros` (`id_carros`)
