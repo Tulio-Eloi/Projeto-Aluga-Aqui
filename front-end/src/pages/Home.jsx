@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Slider from '../components/Slider';
 import Card from '../components/Card';
-import '../assets/carro.png'
+//import '../assets/carro.png'
 
 // SIMULAÇÃO DE DADOS ABAIXO, SOMENTE ENQUANTO NÃO LIGA COM O BANCO
 /*const carros = [{
@@ -87,12 +87,14 @@ function Home() {
           {carros.map((carro) => (
             <Card
               key={carro.id_carros}
-              nome={carro.modelo_carros}
-              marca={carro.marca_carros}
-              cor={carro.cor_carros}
-              ano={carro.ano_carros}
-              preco={carro.valor_carros}
+              nome={"Modelo: "+carro.modelo_carros}
+              marca={"Marca: "+carro.marca_carros}
+              cor={"Cor: "+carro.cor_carros}
+              ano={"Ano: "+carro.ano_carros}
+              preco={"R$"+carro.valor_carros}
               imagem={carro.imagens_carros}
+              status={"Status: "+carro.status_carros}
+
             />
           ))}
         </section>
