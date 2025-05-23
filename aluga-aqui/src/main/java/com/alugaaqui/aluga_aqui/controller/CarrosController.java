@@ -1,0 +1,31 @@
+package com.alugaaqui.aluga_aqui.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.alugaaqui.aluga_aqui.model.CarrosModel;
+import com.alugaaqui.aluga_aqui.repositories.CarrosRepositories;
+
+
+@RestController//ela responde por requisições
+@CrossOrigin(origins = "http://localhost:5173")
+@RequestMapping("/carros")// criar uma rota (Endpoints)
+
+public class CarrosController {
+    @Autowired //anotação define que essa variavel precisa ser injetada (como se fosse passada por construct)
+   
+
+    private CarrosRepositories carros;
+    @GetMapping
+    public List<CarrosModel> findAll(){
+       
+       return carros.findAll();
+
+    }
+    
+}

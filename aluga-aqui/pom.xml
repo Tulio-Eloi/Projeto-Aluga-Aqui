@@ -62,7 +62,22 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<dependency>
+		<groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <scope>provided</scope>
+	</dependency>
+	
+<dependency>
+  <groupId>org.apache.httpcomponents.client5</groupId>
+  <artifactId>httpclient5</artifactId>
+  <scope>test</scope>
+</dependency>
+
 	</dependencies>
+		
+	
 
 	<build>
 		<plugins>

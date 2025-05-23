@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import './Home.css'
-
+import React, { useEffect, useState } from 'react';
 import { register } from 'swiper/element/bundle'
 register();
 import 'swiper/css';
@@ -12,7 +11,7 @@ import Card from '../components/Card';
 import '../assets/carro.png'
 
 // SIMULAÇÃO DE DADOS ABAIXO, SOMENTE ENQUANTO NÃO LIGA COM O BANCO
-const carros = [{
+/*const carros = [{
     id: 1,
     nome: 'Renault Boreal',
     descricao: 'Econômico, confortável e ótimo para cidade.',
@@ -63,9 +62,22 @@ const carros = [{
   },
   
 
-]
+]*/
+
 
 function Home() {
+
+  const [carros, setCarros] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/carros') // URL do seu back-end
+      .then(response => response.json())
+      .then(data => setCarros(data))
+      .catch(error => {
+        console.error("Erro ao buscar carros:", error);
+      });
+  }, []);
+
   return (
     <div className='layout'>
       <Navbar /> 
@@ -74,11 +86,11 @@ function Home() {
         <section className='card-list'>
           {carros.map((carro) => (
             <Card
-              key={carro.id}
-              nome={carro.nome}
-              descricao={carro.descricao}
-              preco={carro.preco}
-              imagem={carro.imagem}
+              key={carro.id_carros}
+              nome={carro.modelo_carros}
+              descricao={carro.marca_carros}
+              preco={carro.valor_carros}
+              imagem={carro.imagens_carros}
             />
           ))}
         </section>
@@ -88,4 +100,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;
