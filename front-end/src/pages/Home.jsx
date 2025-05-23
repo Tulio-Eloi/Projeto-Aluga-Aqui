@@ -88,7 +88,9 @@ function Home() {
             <Card
               key={carro.id_carros}
               nome={carro.modelo_carros}
-              descricao={carro.marca_carros}
+              marca={carro.marca_carros}
+              cor={carro.cor_carros}
+              ano={carro.ano_carros}
               preco={carro.valor_carros}
               imagem={carro.imagens_carros}
             />
