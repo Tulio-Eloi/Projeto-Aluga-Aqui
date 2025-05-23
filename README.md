@@ -15,7 +15,7 @@ Antes de iniciar, você precisa ter instalado em sua máquina:
 npm install
 ```
 
-2. Na mesma pasta, isntale as dependências do projeto:
+2. Na mesma pasta, instale as dependências do projeto:
 ```
 npm install react-router-dom
 npm install swiper
