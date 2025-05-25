@@ -31,9 +31,9 @@ Após isso, o site estará acessível em http://localhost:5173/
 ## Uso do Back end
 
 1. Rode o docker compose
-   ```
-   docker compose up
-   ```
+```
+docker compose up
+```
 2. Crie o banco
 - importando o arquivo ou colando o código em forma de SQL 
 3. Rode o java:
