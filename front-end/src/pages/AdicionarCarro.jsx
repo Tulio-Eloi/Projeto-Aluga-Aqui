@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import FormularioAdicionar from '../components/FormularioAdicionar'
 import './Home.css'
+import MyButton from '../components/MyButton'
 
 function AdicionarCarro(){
     return(
@@ -9,6 +10,7 @@ function AdicionarCarro(){
             <Navbar /> 
             <main>
                 <FormularioAdicionar/>
+                <MyButton label='Adicionar' onClick={() => alert('Funcionou!')}/>
             </main>
             <Footer />
         </div>  

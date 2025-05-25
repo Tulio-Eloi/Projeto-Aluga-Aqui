@@ -12,8 +12,6 @@ function FormularioAdicionar(){
                 <input type="text" id="Cor" placeholder='Cor'/>
                 <input type="text" id="Status" placeholder='Status'/>
             </div>
-                
-            <button type="submit">Adicionar</button>
         </>
 
     )

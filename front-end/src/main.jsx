@@ -10,8 +10,8 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       {/* <Home /> */}
-      < Alugar />
-      {/* <AdicionarCarro/> */}
+      {/* < Alugar /> */}
+      <AdicionarCarro/>
     </BrowserRouter>
   </StrictMode>,
 )

@@ -1,19 +1,18 @@
+import DadosCarro from './DadosCarro'
 import './Formulario.css'
 import MyButton from './MyButton'
 
 function Formulario(){
     return(
         <>
-            
-            <div className='dados-carro'>
-                <h2>Dados do carro</h2>
-                <h4>Modelo:</h4>
-                <h4>Marca:</h4>
-                <h4>Placa:</h4>
-                <h4>Ano:</h4>
-                <h4>Cor:</h4>
-                <h4>Status:</h4>
-            </div>
+            <DadosCarro 
+            modelo=""
+            marca=""
+            placa=""
+            ano=""
+            cor=""
+            status=""
+            />
 
             <div className='dados-pessoais'>
                 <h1>Dados pessoais</h1>
@@ -32,7 +31,7 @@ function Formulario(){
                 <input type="text" id="valor" value="Valor total: R$" readOnly/>
                 
             </div>
-            
+
             <MyButton label='Concluir' onClick={() => alert('Funcionou!')}/>
         </>
 
