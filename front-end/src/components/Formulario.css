@@ -1,0 +1,83 @@
+h2{
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+h1{
+    font-size: x-large;
+    padding: 1em;
+    padding-bottom: 0;
+}
+
+.dados-carro{
+    width: 50%;
+    background-color: rgb(241, 241, 241);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    border-radius: 1em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dados-pessoais{
+    flex-wrap: wrap;
+}
+
+input{
+    padding: 0.8em;
+    margin-left: 1.5em;
+    background-color: white;
+    color: black;
+    border-radius: 0.5em;
+    border-color: rgb(197, 197, 197);
+    margin-top: 1em;
+
+}
+
+input:focus {
+  background-color: #ffe4c4;    
+}
+
+#nome, #endereco{
+    margin-left: 2em;
+    width: 30em;
+}
+
+#telefone{
+    width: 20em;
+}
+
+#email{
+    width: 25em;
+}
+
+#data{
+    margin-left: 2em;
+}
+
+#observacoes{
+    width: 60em;
+}
+
+#valor{
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+button{
+    padding: 0.7em 1.5em;
+    font-size: 1.1em;
+    margin: 2em;
+    border-radius: 0.5em;
+    font-weight: bold;
+    background-color: rgb(255, 102, 0);
+    float: right;
+    transition: 0.4s ease;
+}
+
+button:hover{
+    background-color: rgb(212, 85, 0);
+    cursor: pointer;
+}
