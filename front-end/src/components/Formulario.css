@@ -81,3 +81,30 @@ button:hover{
     background-color: rgb(212, 85, 0);
     cursor: pointer;
 }
+
+
+
+
+#Modelo{
+    width: 30em;
+}
+
+#Marca{
+    width: 15em;
+}
+
+#Placa{
+    width: 20em;
+}
+
+#Ano{
+    width: 10em;
+}
+
+#Cor{
+    width: 30em;
+}
+
+#Status{
+    width: 15em;
+}
