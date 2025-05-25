@@ -9,8 +9,8 @@ import AdicionarCarro from './pages/AdicionarCarro.jsx';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <Home />
-      {/* < Alugar /> */}
+      {/* <Home /> */}
+      < Alugar />
       {/* <AdicionarCarro/> */}
     </BrowserRouter>
   </StrictMode>,

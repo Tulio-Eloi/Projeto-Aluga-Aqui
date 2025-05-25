@@ -1,4 +1,5 @@
 import './Formulario.css'
+import MyButton from './MyButton'
 
 function Formulario(){
     return(
@@ -28,10 +29,11 @@ function Formulario(){
                 <input type="date" id="data" placeholder='Data inicial' />
                 <input type="date" id="data" placeholder='Data Final' />
                 <input type="text" id="observacoes" placeholder='Observações' />
-                <input type="text" id="valor" value="Valor total: R$" readonly/>
+                <input type="text" id="valor" value="Valor total: R$" readOnly/>
                 
             </div>
-            <button type="submit">Concluir</button>
+            
+            <MyButton label='Concluir' onClick={() => alert('Funcionou!')}/>
         </>
 
     )
