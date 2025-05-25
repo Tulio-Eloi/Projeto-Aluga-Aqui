@@ -7,7 +7,6 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: cod_banco_aluga_aqui
       MYSQL_USER: aluga_aqui
       MYSQL_PASSWORD: 123
     ports:
