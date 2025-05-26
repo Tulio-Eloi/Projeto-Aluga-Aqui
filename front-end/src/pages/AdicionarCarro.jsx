@@ -10,7 +10,7 @@ function AdicionarCarro(){
             <Navbar /> 
             <main>
                 <FormularioAdicionar/>
-                <MyButton label='Adicionar' onClick={() => alert('Funcionou!')}/>
+                <MyButton label='Adicionar' onClick={() => alert('Carro adicionado!')}/>
             </main>
             <Footer />
         </div>  

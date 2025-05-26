@@ -1,5 +1,7 @@
 import './Card.css'
-import imagem from '../assets/carro.png'
+import { useNavigate } from 'react-router-dom';
+
+const navigate = useNavigate();
 
 function Card({ imagem,nome, marca, preco, cor,ano, status }){
     return(
@@ -11,7 +13,7 @@ function Card({ imagem,nome, marca, preco, cor,ano, status }){
             <p className='cor'>{cor}</p>
             <p className='Status'>{status}</p>
 
-            <div className='card-bottom'>
+            <div className='card-bottom' onClick={() => navigate('/alugar')}>
                 <span className="preco">{preco}</span>
                 <button className='botao'>Alugar</button>
 

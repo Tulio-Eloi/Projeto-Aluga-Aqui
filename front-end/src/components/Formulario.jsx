@@ -1,6 +1,9 @@
 import DadosCarro from './DadosCarro'
 import './Formulario.css'
 import MyButton from './MyButton'
+import { useNavigate } from 'react-router-dom';
+
+const navigate = useNavigate();
 
 function Formulario(){
     return(
@@ -34,7 +37,7 @@ function Formulario(){
                 
             </div>
 
-            <MyButton label='Concluir' onClick={() => alert('Funcionou!')}/>
+            <MyButton label='Concluir' onClick={() => navigate('/')}/>
         </>
 
     )

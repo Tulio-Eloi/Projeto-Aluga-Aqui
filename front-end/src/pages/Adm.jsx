@@ -1,4 +1,5 @@
 import './StyleGeral.css'
+import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import DadosCarro from '../components/DadosCarro'
@@ -34,14 +35,15 @@ const Adm =()=>{
       status: 'Manutenção',
     },
   ];
-
+  
+  const navigate = useNavigate();
 
     return(
         <div className='layout'>
             <Navbar/>
             <main>
                 <h1 className='adm'>CARROS CADASTRADOS</h1><br />
-                <MyButton label='Adicionar carro' onClick={() => alert('Adicionar!')}/>
+                <MyButton label='Adicionar carro' onClick={() => navigate('/adicionar-carro')} />
                 {carrosExemplo.map((carro, index) => (
                     <DadosCarro
                     key={index}
@@ -59,7 +61,6 @@ const Adm =()=>{
             </main>
             <Footer/>
         </div>
-
     )
 }
 
