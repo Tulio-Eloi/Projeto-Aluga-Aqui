@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Formulario from '../components/Formulario'
-import './Home.css'
+import './StyleGeral.css'
 
 function Alugar(){
     return(

@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import FormularioAdicionar from '../components/FormularioAdicionar'
-import './Home.css'
+import './StyleGeral.css'
 import MyButton from '../components/MyButton'
 
 function AdicionarCarro(){

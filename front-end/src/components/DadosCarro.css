@@ -1,0 +1,50 @@
+.dados-carro{
+    width: 50%;
+    background-color: rgb(241, 241, 241);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    border-radius: 1em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.adm{
+  width: 50%;
+  margin-left: 3em; 
+  border-radius: 2em;
+  display:inline-block;
+}
+
+.editar{
+    background-color: blue;
+    margin-right: 0.5em;
+    padding: 0.5em 1em;
+    margin-bottom: 0;
+    border-radius: 1.2em;
+}
+
+.editar:hover{
+    background-color: rgb(0, 0, 167);
+}
+
+.remover{
+    background-color: red;
+    margin-left: 0em;
+    padding: 0.5em 1em;
+    margin-bottom: 0;
+    border-radius: 1.2em;
+}
+
+.remover:hover{
+    background-color: rgb(165, 0, 0);
+}
+
+h1.adm{
+  margin-top: 1em;
+  background-color: rgb(255, 255, 255);
+  margin-left: 1em;
+}
+
+

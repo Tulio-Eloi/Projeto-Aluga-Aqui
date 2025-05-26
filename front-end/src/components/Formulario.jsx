@@ -12,6 +12,8 @@ function Formulario(){
             ano=""
             cor=""
             status=""
+            className=''
+            mostrarBotoes={false}
             />
 
             <div className='dados-pessoais'>
