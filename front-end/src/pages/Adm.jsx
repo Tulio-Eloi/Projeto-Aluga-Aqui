@@ -1,4 +1,5 @@
 import './StyleGeral.css'
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -9,32 +10,16 @@ import MyButton from '../components/MyButton'
 // a variável abaixo foi colocada apenas para simular os dados do banco
 // favor, apagar ao conectar com o banco
 const Adm =()=>{
-    const carrosExemplo = [
-    {
-      modelo: 'Civic',
-      marca: 'Honda',
-      placa: 'ABC-1234',
-      ano: 2020,
-      cor: 'Prata',
-      status: 'Disponível',
-    },
-    {
-      modelo: 'Corolla',
-      marca: 'Toyota',
-      placa: 'DEF-5678',
-      ano: 2019,
-      cor: 'Preto',
-      status: 'Alugado',
-    },
-    {
-      modelo: 'Onix',
-      marca: 'Chevrolet',
-      placa: 'GHI-9012',
-      ano: 2022,
-      cor: 'Branco',
-      status: 'Manutenção',
-    },
-  ];
+    const [carros, setCarros] = useState([]);
+    
+      useEffect(() => {
+        fetch('http://localhost:8080/carros') // URL do seu back-end
+          .then(response => response.json())
+          .then(data => setCarros(data))
+          .catch(error => {
+            console.error("Erro ao buscar carros:", error);
+          });
+      }, []);
   
   const navigate = useNavigate();
 
@@ -44,17 +29,17 @@ const Adm =()=>{
             <main>
                 <h1 className='adm'>CARROS CADASTRADOS</h1><br />
                 <MyButton label='Adicionar carro' onClick={() => navigate('/adicionar-carro')} />
-                {carrosExemplo.map((carro, index) => (
+                {carros.map((carro) => (
                     <DadosCarro
-                    key={index}
+                    key={carro.id_carros}
                     className="adm" //esse parâmetro não deve ser alterado
                     mostrarBotoes={true} //esse parâmetro nao deve ser alterado
-                    modelo={carro.modelo}
-                    marca={carro.marca}
-                    placa={carro.placa}
-                    ano={carro.ano}
-                    cor={carro.cor}
-                    status={carro.status}
+                    modelo={carro.modelo_carros}
+                    marca={carro.marca_carros}
+                    placa={carro.placa_carros}
+                    ano={carro.ano_carros}
+                    cor={carro.cor_carros}
+                    status={carro.status_carros}
                     />
                 ))} 
                 <br /><br /><br />

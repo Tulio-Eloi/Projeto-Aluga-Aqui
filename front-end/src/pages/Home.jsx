@@ -1,5 +1,5 @@
 import './StyleGeral.css'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'; //Sempre importar quando for usar os dados carros
 import { register } from 'swiper/element/bundle'
 register();
 import 'swiper/css';
