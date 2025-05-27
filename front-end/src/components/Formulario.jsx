@@ -3,9 +3,9 @@ import './Formulario.css'
 import MyButton from './MyButton'
 import { useNavigate } from 'react-router-dom';
 
-const navigate = useNavigate();
 
 function Formulario(){
+    const navigate = useNavigate();
     return(
         <>
             <DadosCarro 

@@ -1,9 +1,10 @@
 import './Card.css'
 import { useNavigate } from 'react-router-dom';
 
-const navigate = useNavigate();
+
 
 function Card({ imagem,nome, marca, preco, cor,ano, status }){
+    const navigate = useNavigate();
     return(
         <div className="card">
             <img src={imagem} alt='Card'/>
