@@ -27,5 +27,9 @@ public class CarrosController {
        return carros.findAll();
 
     }
+    @GetMapping("/delete{id}")
+    public void deleteById(Long id) {
+        carros.deleteById(id);
+    }
     
 }

@@ -1,6 +1,6 @@
 import './DadosCarro.css'
 
-const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostrarBotoes}) => {
+const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostrarBotoes, id}) => {
     return(
         <div className={`dados-carro ${className}`}>
             <h2>Dados do carro</h2>
@@ -13,7 +13,7 @@ const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostr
 
             {mostrarBotoes && (
                 <div>
-                    <button className='remover' onClick={() => alert("Remover")}>Remover</button>
+                    <button className='remover' onClick={handleDelete => alert("Remover")}>Remover</button>
                     <button className='editar' onClick={() => alert("Editar")}>Editar</button>
                 </div>
             )}
