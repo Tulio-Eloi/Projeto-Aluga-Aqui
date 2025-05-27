@@ -11,6 +11,7 @@ function FormularioAdicionar(){
                 <input type="text" id="Ano" placeholder='Ano'/>
                 <input type="text" id="Cor" placeholder='Cor'/>
                 <input type="text" id="Status" placeholder='Status'/>
+                <input type="text" id="Imagem" placeholder='Link da imagem' />
             </div>
         </>
 
