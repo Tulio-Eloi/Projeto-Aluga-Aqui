@@ -1,6 +1,26 @@
 import './DadosCarro.css'
+import React, { useEffect, useState } from 'react'; 
 
 const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostrarBotoes, id}) => {
+    const deletarCarro = (id) => {
+      console.log(id);
+        fetch(`http://localhost:8080/carros/remover/${id}`, {
+          method: 'DELETE'
+        })
+        .then(response => {
+          if (response.status === 204 || response.status === 200) {
+            alert("Carro removido com sucesso!");
+            window.location.reload();
+            // aqui você pode atualizar a lista, por exemplo, com um callback ou useEffect
+          } else {
+            alert("Erro ao remover o carro.");
+          }
+        })
+        .catch(error => {
+          console.error("Erro:", error);
+          alert("Erro ao conectar com o servidor.");
+        });
+      };
     return(
         <div className={`dados-carro ${className}`}>
             <h2>Dados do carro</h2>
@@ -13,7 +33,7 @@ const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostr
 
             {mostrarBotoes && (
                 <div>
-                    <button className='remover' onClick={handleDelete => alert("Remover")}>Remover</button>
+                    <button className='remover' onClick={() => deletarCarro(id)}>Remover</button>
                     <button className='editar' onClick={() => alert("Editar")}>Editar</button>
                 </div>
             )}
