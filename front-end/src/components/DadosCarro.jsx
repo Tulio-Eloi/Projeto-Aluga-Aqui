@@ -11,7 +11,7 @@ const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostr
           if (response.status === 204 || response.status === 200) {
             alert("Carro removido com sucesso!");
             window.location.reload();
-            // aqui você pode atualizar a lista, por exemplo, com um callback ou useEffect
+  
           } else {
             alert("Erro ao remover o carro.");
           }
