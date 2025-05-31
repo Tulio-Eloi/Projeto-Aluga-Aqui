@@ -20,7 +20,7 @@ const Adm =()=>{
             console.error("Erro ao buscar carros:", error);
           });
       }, []);
-  
+     
   const navigate = useNavigate();
 
     return(
@@ -32,6 +32,7 @@ const Adm =()=>{
                 {carros.map((carro) => (
                     <DadosCarro
                     key={carro.id_carros}
+                   
                     className="adm" //esse parâmetro não deve ser alterado
                     mostrarBotoes={true} //esse parâmetro nao deve ser alterado
                     modelo={carro.modelo_carros}
@@ -40,6 +41,10 @@ const Adm =()=>{
                     ano={carro.ano_carros}
                     cor={carro.cor_carros}
                     status={carro.status_carros}
+                    valor={carro.valor_carros}
+                    id = {carro.id_carros}
+                   
+                    
                     />
                 ))} 
                 <br /><br /><br />

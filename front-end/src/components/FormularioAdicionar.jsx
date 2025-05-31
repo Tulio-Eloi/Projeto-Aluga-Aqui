@@ -1,21 +1,35 @@
 import './Formulario.css'
 
-function FormularioAdicionar(){
-    return(
-        <>
-            <div className='dados-pessoais'>
-                <h1>Adicionar carro</h1>
-                <input type="text" id="Modelo" placeholder='Modelo'/>
-                <input type="text" id="Marca" placeholder='Marca'/>
-                <input type="text" id="Placa" placeholder='Placa'/>
-                <input type="text" id="Ano" placeholder='Ano'/>
-                <input type="text" id="Cor" placeholder='Cor'/>
-                <input type="text" id="Status" placeholder='Status'/>
-                <input type="text" id="Imagem" placeholder='Link da imagem' />
-            </div>
-        </>
+function FormularioAdicionar({ carro, onChange }) {
+    return (
+        <div className='dados-pessoais'>
+            <h1>Adicionar carro</h1>
 
-    )
+            <input type="text" id="modelo_carros" placeholder='Modelo'
+                value={carro.modelo_carros} onChange={onChange} />
+
+            <input type="text" id="marca_carros" placeholder='Marca'
+                value={carro.marca_carros} onChange={onChange} />
+
+            <input type="text" id="placa_carros" placeholder='Placa'
+                value={carro.placa_carros} onChange={onChange} />
+
+            <input type="text" id="ano_carros" placeholder='Ano'
+                value={carro.ano_carros} onChange={onChange} />
+
+            <input type="text" id="cor_carros" placeholder='Cor'
+                value={carro.cor_carros} onChange={onChange} />
+
+            <input type="text" id="status_carros" placeholder='Status'
+                value={carro.status_carros} onChange={onChange} />
+
+            <input type="text" id="imagens_carros" placeholder='Link da imagem'
+                value={carro.imagens_carros} onChange={onChange} />
+
+            <input type="number" id="valor_carros" placeholder='Valor'
+                value={carro.valor_carros} onChange={onChange} />
+        </div>
+    );
 }
 
-export default FormularioAdicionar
+export default FormularioAdicionar;

@@ -55,30 +55,30 @@ input:focus {
 }
 
 
-#Modelo{
+#modelo_carros{
     width: 30em;
 }
 
-#Marca{
+#marca_carros{
     width: 15em;
 }
 
-#Placa{
+#placa_carros{
     width: 20em;
 }
 
-#Ano{
+#ano_carros{
     width: 10em;
 }
 
-#Cor{
-    width: 30em;
-}
-
-#Status{
+#cor_carros{
     width: 15em;
 }
 
-#Imagem{
+#status_carros{
+    width: 15em;
+}
+
+#imagens_carros{
     width: 40em;
 }
