@@ -23,12 +23,12 @@ public class CarrosModel {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id_carros;
 
-    public String modelo_carros;
-    public String marca_carros;
-    public String placa_carros;
-    public String ano_carros;
-    public String cor_carros;
-    public String status_carros;
-    public double valor_carros;
-    public String imagens_carros;
+    private String modelo_carros;
+    private String marca_carros;
+    private String placa_carros;
+    private String ano_carros;
+    private String cor_carros;
+    private String status_carros;
+    private double valor_carros;
+    private String imagens_carros;
 }
