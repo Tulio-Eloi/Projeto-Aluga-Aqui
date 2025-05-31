@@ -1,8 +1,19 @@
 import './DadosCarro.css'
+import EditarCarro from './EditarCarro';
 import React, { useEffect, useState } from 'react'; 
 
 const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostrarBotoes, id}) => {
-    const deletarCarro = (id) => {
+  const [modalAberto, setModalAberto] = useState(false);
+
+  const abrirEditarCarro = () => {
+    setModalAberto(true);
+  };
+
+  const fecharEditarCarro = () => {
+    setModalAberto(false);
+  };
+
+  const deletarCarro = (id) => {
       console.log(id);
         fetch(`http://localhost:8080/carros/remover/${id}`, {
           method: 'DELETE'
@@ -34,9 +45,14 @@ const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostr
             {mostrarBotoes && (
                 <div>
                     <button className='remover' onClick={() => deletarCarro(id)}>Remover</button>
-                    <button className='editar' onClick={() => alert("Editar")}>Editar</button>
+                    <button className='editar' onClick={abrirEditarCarro}>Editar</button>
                 </div>
             )}
+
+            <EditarCarro 
+              isOpen={modalAberto} 
+              onClose={fecharEditarCarro}
+            />
         </div>
     )
 
