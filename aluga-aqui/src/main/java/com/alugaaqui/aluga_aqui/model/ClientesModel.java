@@ -23,21 +23,23 @@ public class ClientesModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_clientes;
+    private Long id;
     
-    @Column(name = "nome_clientes", nullable = false, length = 45)
-    private String nome_clientes; 
+    @Column(name = "nome_completo", nullable = false, length = 45)
+    private String nomeCompleto; 
 
-    @Column(name = "email_clientes", nullable = false, length = 45)
-    private String email_clientes;
+    @Column(name = "email",  unique = true, nullable = false, length = 45)
+    private String email;
 
-    @Column(name = "telefone__clientes", nullable = false, length = 45)
-    private String telefone_clientes;
+    @Column(name = "telefone", nullable = false, length = 45)
+    private String telefone;
 
-    @Column(name = "endereco_clientes", nullable = false, length = 45)
-    private String endereco_clientes;
+    @Column(name = "endereco", nullable = false, length = 80)
+    private String endereco;
 
 
-    @Column(name = "cpf_clientes", nullable = false, unique = true, length = 14)
-    private String cpf_clientes; 
+    @Column(name = "cpf", nullable = false, unique = true, length = 14)
+    private String cpf; 
+
+   
 }
