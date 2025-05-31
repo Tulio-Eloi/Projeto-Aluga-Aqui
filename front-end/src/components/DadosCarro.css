@@ -1,6 +1,7 @@
 .dados-carro{
+    padding-top: 1.5em;
     width: 50%;
-    background-color: rgb(241, 241, 241);
+    background: linear-gradient(to top, #f5f4f4, #ffffff);
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
@@ -11,10 +12,11 @@
 }
 
 .adm{
-  width: 50%;
-  margin-left: 3em; 
-  border-radius: 2em;
-  display:inline-block;
+    padding-top: 1.5em;
+    width: 50%;
+    margin-left: 3em; 
+    border-radius: 2em;
+    display:inline-block;
 }
 
 .editar{

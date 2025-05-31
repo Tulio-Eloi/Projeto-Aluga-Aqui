@@ -34,7 +34,6 @@ const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostr
       };
     return(
         <div className={`dados-carro ${className}`}>
-            <h2>Dados do carro</h2>
             <h4>Modelo: {modelo}</h4>
             <h4>Marca: {marca}</h4>
             <h4>Placa: {placa}</h4>
