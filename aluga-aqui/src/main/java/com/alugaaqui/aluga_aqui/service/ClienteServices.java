@@ -64,11 +64,11 @@ public class ClienteServices {
     }
 
   
-    public Optional<ClientesModel> buscarClientesPorNome(String nomeParcial) {
+    public List<ClientesModel> buscarClientesPorNome(String nomeParcial) {
         if (nomeParcial == null || nomeParcial.trim().isEmpty()) {
-            return Optional.empty(); 
+            return List.of();
         }
-        return clienteRepositories.findByNomeCompletosContainingIgnoreCase(nomeParcial);
+        return clienteRepositories.findByNomeCompletoContainingIgnoreCase(nomeParcial);
     }
 
 
