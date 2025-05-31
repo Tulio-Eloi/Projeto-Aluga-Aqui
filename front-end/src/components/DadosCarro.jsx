@@ -2,7 +2,7 @@ import './DadosCarro.css'
 import EditarCarro from './EditarCarro';
 import React, { useEffect, useState } from 'react'; 
 
-const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostrarBotoes, id}) => {
+const DadosCarro = ({modelo, marca, placa, ano, cor, status, valor, className='', mostrarBotoes, id}) => {
   const [modalAberto, setModalAberto] = useState(false);
 
   const abrirEditarCarro = () => {
@@ -40,6 +40,7 @@ const DadosCarro = ({modelo, marca, placa, ano, cor, status, className='', mostr
             <h4>Ano: {ano}</h4>
             <h4>Cor: {cor}</h4>
             <h4>Status: {status}</h4>
+            <h4>Valor: {valor}</h4>
 
             {mostrarBotoes && (
                 <div>

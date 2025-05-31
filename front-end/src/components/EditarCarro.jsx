@@ -11,8 +11,9 @@ const EditarCarro = ({ isOpen, onClose }) => {
             <input type="text" id="modelo" name="modelo" placeholder='Modelo'/>
             <input type="text" id="marca" name="marca" placeholder='Marca'/>
             <input type="text" id="placa" name="placa" placeholder='Placa'/>
-            <input type="number" id="ano" name="ano" placeholder='Ano'/>
+            <input type="text" id="ano" name="ano" placeholder='Ano'/>
             <input type="text" id="cor" name="cor" placeholder='Cor'/>
+            <input type="text" id="cor" name="cor" placeholder='Valor'/>
             <br />
             <select className="status" name="status">
                 <option value="">Selecione o status</option>

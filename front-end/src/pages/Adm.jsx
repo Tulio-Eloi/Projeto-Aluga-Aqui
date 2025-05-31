@@ -41,6 +41,7 @@ const Adm =()=>{
                     ano={carro.ano_carros}
                     cor={carro.cor_carros}
                     status={carro.status_carros}
+                    valor={carro.valor_carros}
                     id = {carro.id_carros}
                    
                     

@@ -84,6 +84,7 @@ h2.tituloEditar{
 
 .btnSalvarEditar{
     background-color: blue;
+    border-color: blue;
     margin-left: 0em;
     padding: 0.5em 1em;
     border-radius: 1.2em;
