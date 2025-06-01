@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -47,5 +48,24 @@ public ResponseEntity<Void> deleteById(@PathVariable long id) {
         CarrosModel car = carros.save(carro);
         return ResponseEntity.status(HttpStatus.CREATED).body(car);
     }
+    @PutMapping("/editar/{id}")
+    public ResponseEntity<CarrosModel> editarCarro(@PathVariable Long id, @RequestBody CarrosModel carroDetalhes) {
+        return carros.findById(id)
+            .map(carroExistente -> {
+                carroExistente.setModelo_carros(carroDetalhes.getModelo_carros());
+                carroExistente.setMarca_carros(carroDetalhes.getMarca_carros());
+                carroExistente.setPlaca_carros(carroDetalhes.getPlaca_carros());
+                carroExistente.setAno_carros(carroDetalhes.getAno_carros());
+                carroExistente.setCor_carros(carroDetalhes.getCor_carros());
+                carroExistente.setStatus_carros(carroDetalhes.getStatus_carros());
+                carroExistente.setValor_carros(carroDetalhes.getValor_carros());
+                carroExistente.setImagens_carros(carroDetalhes.getImagens_carros());
+    
+                CarrosModel carroAtualizado = carros.save(carroExistente);
+                return ResponseEntity.ok(carroAtualizado);
+            })
+            .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     
 }

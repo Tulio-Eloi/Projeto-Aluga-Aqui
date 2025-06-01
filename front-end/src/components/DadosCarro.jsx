@@ -1,6 +1,6 @@
 import './DadosCarro.css'
 import EditarCarro from './EditarCarro';
-import React, { useEffect, useState } from 'react'; 
+import React, { useState, useEffect } from 'react';
 
 const DadosCarro = ({modelo, marca, placa, ano, cor, status, valor, className='', mostrarBotoes, nomeCliente, id}) => {
   const [modalAberto, setModalAberto] = useState(false);
@@ -50,10 +50,19 @@ const DadosCarro = ({modelo, marca, placa, ano, cor, status, valor, className=''
                 </div>
             )}
 
-            <EditarCarro 
-              isOpen={modalAberto} 
-              onClose={fecharEditarCarro}
-            />
+<EditarCarro
+  isOpen={modalAberto}
+  onClose={() => setModalAberto(false)}
+  modelo={modelo}
+  marca={marca}
+  placa={placa}
+  ano={ano}
+  cor={cor}
+  valor={valor}
+  status={status}
+  idCarro={id}   
+  onUpdateSuccess={() => window.location.reload()}  
+/>
         </div>
     )
 
