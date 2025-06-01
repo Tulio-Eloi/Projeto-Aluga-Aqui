@@ -42,6 +42,7 @@ const Adm =()=>{
                     cor={carro.cor_carros}
                     status={carro.status_carros}
                     valor={carro.valor_carros}
+                    nomeCliente='' // nome do cliente que alugou o carro vai aqui
                     id = {carro.id_carros}
                    
                     

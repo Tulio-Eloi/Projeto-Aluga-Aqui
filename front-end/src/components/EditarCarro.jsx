@@ -19,6 +19,7 @@ const EditarCarro = ({ isOpen, onClose }) => {
                 <option value="">Selecione o status</option>
                 <option value="Disponível">Disponível</option>
                 <option value="Indisponível">Indisponível</option>
+                <option value="Alugado">Alugado</option>
             </select>
 
           <div className='actions'>
