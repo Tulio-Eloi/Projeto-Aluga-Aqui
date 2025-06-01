@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.alugaaqui.aluga_aqui.model.ClientesModel;
@@ -25,8 +24,8 @@ public class ClienteServices {
     public ClientesModel salvarCliente(ClientesModel cliente) {
 
         // Validação de CPF único
-        if (cliente.getCpf() != null && clienteRepositories.findByCpf(cliente.getCpf()).isPresent()) {
-            throw new IllegalArgumentException("CPF já cadastrado: " + cliente.getCpf());
+        if (cliente.getCpf_clientes() != null && clienteRepositories.findByCpf(cliente.getCpf_clientes()).isPresent()) {
+            throw new IllegalArgumentException("CPF já cadastrado: " + cliente.getCpf_clientes());
         }
 
         //Validar email único
@@ -91,7 +90,7 @@ public class ClienteServices {
                 // }
 
 
-                clienteExistente.setNomeCompleto(clienteAtualizado.getNomeCompleto());
+                clienteExistente.setNome_completo(clienteAtualizado.getNome_completo());
                 // clienteExistente.setDataNascimento(clienteAtualizado.getDataNascimento());
                 clienteExistente.setTelefone(clienteAtualizado.getTelefone());
                 clienteExistente.setEndereco(clienteAtualizado.getEndereco());

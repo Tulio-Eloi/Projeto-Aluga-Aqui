@@ -1,15 +1,14 @@
 package com.alugaaqui.aluga_aqui.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -26,7 +25,7 @@ public class ClientesModel {
     private Long id;
     
     @Column(name = "nome_completo", nullable = false, length = 45)
-    private String nomeCompleto; 
+    private String nome_completo; 
 
     @Column(name = "email",  unique = true, nullable = false, length = 45)
     private String email;
@@ -38,8 +37,8 @@ public class ClientesModel {
     private String endereco;
 
 
-    @Column(name = "cpf", nullable = false, unique = true, length = 14)
-    private String cpf; 
+    @Column(name = "cpf_clientes", nullable = false, unique = true, length = 14)
+    private String cpf_clientes; 
 
    
 }
