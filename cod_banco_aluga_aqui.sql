@@ -4,27 +4,16 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
--- -----------------------------------------------------
--- Schema aluga_aqui
--- -----------------------------------------------------
 
--- -----------------------------------------------------
--- Schema aluga_aqui
--- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `aluga_aqui` DEFAULT CHARACTER SET utf8 ;
--- -----------------------------------------------------
--- Schema aluga_aqui
--- -----------------------------------------------------
 
--- -----------------------------------------------------
--- Schema aluga_aqui
--- -----------------------------------------------------
+
+
 CREATE SCHEMA IF NOT EXISTS `aluga_aqui` DEFAULT CHARACTER SET utf8 ;
 USE `aluga_aqui` ;
 
--- -----------------------------------------------------
--- Table `aluga_aqui`.`carros`
--- -----------------------------------------------------
+
+
 CREATE TABLE IF NOT EXISTS `aluga_aqui`.`carros` (
   `id_carros` BIGINT NOT NULL AUTO_INCREMENT,
   `modelo_carros` VARCHAR(45) NOT NULL,
@@ -44,27 +33,51 @@ INSERT INTO `carros` (`id_carros`, `modelo_carros`, `marca_carros`, `placa_carro
 (NULL, 'Jetta GLI', 'volkswagen', 'ERIC-3625', '2025', 'Branco', 'Disponivel', 150, 'https://clickpetroleoegas.com.br/wp-content/uploads/2024/06/planetcars.jpg'),
 (NULL, 'Civic TYPE R', 'Honda', 'ZG68512', '2025', 'Preto', 'Indisponível', 250, 'https://directimports.com.br/wp-content/uploads/2023/03/2-23.webp');
 
--- -----------------------------------------------------
--- Table `aluga_aqui`.`alugueis`
--- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `aluga_aqui`. `clientes`
+(
+  `id_clientes` BIGINT NOT NULL AUTO_INCREMENT,
+  `nome_clientes` VARCHAR(45) NOT NULL,
+  `email_clientes` VARCHAR(45) NOT NULL,
+  `telefone_clientes` VARCHAR(45) NOT NULL,
+  `endereco_clientes` VARCHAR(80) NOT NULL,
+  `cpf_clientes` VARCHAR(14) NOT NULL,
+  PRIMARY KEY (`id_clientes`))
+  ENGINE = InnoDB;
+
+
+
+INSERT INTO `aluga_aqui`.`clientes`
+(`id_clientes`, `nome_clientes`, `email_clientes`, `telefone_clientes`, `endereco_clientes`, `cpf_clientes`) VALUES
+(NULL, 'Meruel', 'meruelel15@gmail.com', '(62) 99476-2130', 'Rua Pequi, 147, Marabá, PA', '098.765.432-11');
+
+
 CREATE TABLE IF NOT EXISTS `aluga_aqui`.`alugueis` (
   `id_alugueis` INT NOT NULL AUTO_INCREMENT,
   `data_inicio_alugueis` DATE NOT NULL,
   `data_fim_alugueis` DATE NOT NULL,
   `valor_total_alugueis` DECIMAL(10,2) NOT NULL,
   `observacoes_alugueis` VARCHAR(45) NULL,
-  -- `status_alugueis` VARCHAR(20) NULL,
   `carros_id_carros` BIGINT NOT NULL,
+  `clientes_id_clientes` BIGINT NOT NULL,
   PRIMARY KEY (`id_alugueis`),
-  INDEX `fk_alugueis_carros_idx` (`carros_id_carros` ASC),
+  INDEX `fk_alugueis_carros_idx` (`carros_id_carros` ASC) VISIBLE,
+  INDEX `fk_alugueis_clientes_idx` (`clientes_id_clientes` ASC) VISIBLE,
   CONSTRAINT `fk_alugueis_carros`
     FOREIGN KEY (`carros_id_carros`)
     REFERENCES `aluga_aqui`.`carros` (`id_carros`)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_alugueis_clientes` 
+    FOREIGN KEY (`clientes_id_clientes`)
+    REFERENCES `aluga_aqui`.`clientes` (`id_clientes`)
+    ON DELETE NO ACTION  
     ON UPDATE NO ACTION);
 
-
-
+INSERT INTO `aluga_aqui`.`alugueis` 
+(`data_inicio_alugueis`, `data_fim_alugueis`, `valor_total_alugueis`, `observacoes_alugueis`, `carros_id_carros`, `clientes_id_clientes`) 
+VALUES 
+('2025-06-10', '2025-06-15', 7500.00, 'Primeiro aluguel do Cheiron', 1, 1);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
