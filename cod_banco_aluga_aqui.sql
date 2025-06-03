@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS `aluga_aqui`.`alugueis` (
   `data_fim_alugueis` DATE NOT NULL,
   `valor_total_alugueis` DECIMAL(10,2) NOT NULL,
   `observacoes_alugueis` VARCHAR(45) NULL,
+  `status_alugueis` VARCHAR(20) NULL,
   `carros_id_carros` INT NOT NULL,
   PRIMARY KEY (`id_alugueis`),
   INDEX `fk_alugueis_carros_idx` (`carros_id_carros` ASC),
