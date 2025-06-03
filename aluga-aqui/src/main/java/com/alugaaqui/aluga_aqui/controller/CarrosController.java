@@ -35,7 +35,7 @@ public class CarrosController {
 
     }
    @DeleteMapping("remover/{id}")
-public ResponseEntity<Void> deleteById(@PathVariable long id) {
+public ResponseEntity<Void> deleteById(@PathVariable Long id) {
     if (carros.existsById(id)) {
         carros.deleteById(id);
         return ResponseEntity.noContent().build(); // 204 No Content

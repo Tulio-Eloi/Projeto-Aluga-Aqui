@@ -1,6 +1,6 @@
 package com.alugaaqui.aluga_aqui.model;
 
-import java.math.BigDecimal;
+// import java.math.BigDecimal;
 
 import com.alugaaqui.aluga_aqui.model.enums.StatusCarro;
 

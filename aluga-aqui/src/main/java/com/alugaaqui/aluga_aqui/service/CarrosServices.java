@@ -15,8 +15,8 @@ public class CarrosServices {
     
     private CarrosRepositories carrosRepositories;
 
-    public Optional<CarrosModel> buscarCarroPorId(Long id_carros) { // Ou o nome que você usa, ex: getCarroById
-        return carrosRepositories.findById(id_carros);
+    public Optional<CarrosModel> buscarCarroPorId(Long id_carro) { // Ou o nome que você usa, ex: getCarroById
+        return carrosRepositories.findById(id_carro);
     }
 
     // Optional<CarrosModel> buscarCarroPorId(Integer idCarro);

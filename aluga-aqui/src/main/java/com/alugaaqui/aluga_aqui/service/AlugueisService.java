@@ -1,18 +1,20 @@
 package com.alugaaqui.aluga_aqui.service;
 
-import com.alugaaqui.aluga_aqui.model.AlugueisModel;
-import com.alugaaqui.aluga_aqui.model.CarrosModel;
-import com.alugaaqui.aluga_aqui.model.enums.StatusCarro;
-import com.alugaaqui.aluga_aqui.repositories.AlugueisRepositories;
-import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.alugaaqui.aluga_aqui.model.AlugueisModel;
+import com.alugaaqui.aluga_aqui.model.CarrosModel;
+import com.alugaaqui.aluga_aqui.model.enums.StatusCarro;
+import com.alugaaqui.aluga_aqui.repositories.AlugueisRepositories;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class AlugueisService {
@@ -32,7 +34,7 @@ public class AlugueisService {
             throw new IllegalArgumentException("A data de fim do aluguel não pode ser anterior à data de início.");
         }
 
-        CarrosModel carro = carrosService.buscarCarroPorId(id_carro)
+        CarrosModel carro = carrosService.buscarCarroPorId(id_carro) 
                  .orElseThrow(() -> new EntityNotFoundException("Carro não encontrado com ID: " + id_carro));
 
 

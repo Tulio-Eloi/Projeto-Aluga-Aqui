@@ -1,13 +1,11 @@
 package com.alugaaqui.aluga_aqui.model;
 
-// import com.alugaaqui.aluga_aqui.model.enums.StatusAluguel;
-import java.math.BigDecimal;
+// import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-// import jakarta.persistence.EnumType;
-// import jakarta.persistence.Enumerated;
+
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -39,15 +37,12 @@ public class AlugueisModel {
     @Column(name = "data_fim_alugueis", nullable = false)
     private LocalDate dataFimAlugueis; 
 
-    @Column(name = "valor_total_alugueis", nullable = false, precision = 10, scale = 2)
-    private BigDecimal valorTotalAlugueis; 
+    @Column(name = "valor_total_alugueis", nullable = false)
+    private double valorTotalAlugueis; 
 
     @Column(name = "observacoes_alugueis", length = 45)
     private String observacoesAlugueis; 
 
-    // @Enumerated(EnumType.STRING)
-    // @Column(name = "status_alugueis", length = 20)
-    // private StatusAluguel statusAlugueis;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "carros_id_carros", nullable = false)
