@@ -1,6 +1,13 @@
 package com.alugaaqui.aluga_aqui.model;
 
+import java.math.BigDecimal;
+
+import com.alugaaqui.aluga_aqui.model.enums.StatusCarro;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,7 +35,13 @@ public class CarrosModel {
     private String placa_carros;
     private String ano_carros;
     private String cor_carros;
-    private String status_carros;
+    // private String status_carros;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status_carros", length = 20)
+    private StatusCarro status_carros;
+
+
     private double valor_carros;
     private String imagens_carros;
 }

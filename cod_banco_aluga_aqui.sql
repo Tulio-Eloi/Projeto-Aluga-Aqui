@@ -26,14 +26,14 @@ USE `aluga_aqui` ;
 -- Table `aluga_aqui`.`carros`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `aluga_aqui`.`carros` (
-  `id_carros` INT NOT NULL AUTO_INCREMENT,
+  `id_carros` BIGINT NOT NULL AUTO_INCREMENT,
   `modelo_carros` VARCHAR(45) NOT NULL,
   `marca_carros` VARCHAR(45) NOT NULL,
   `placa_carros` VARCHAR(45) NOT NULL,
   `ano_carros` VARCHAR(45) NOT NULL,
   `cor_carros` VARCHAR(45) NOT NULL,
   `status_carros` VARCHAR(45) NOT NULL,
-   `valor_carros` double NOT NULL,
+   `valor_carros` DECIMAL(10,2) NOT NULL,
   `imagens_carros` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_carros`))
 ENGINE = InnoDB;
@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS `aluga_aqui`.`alugueis` (
   `data_fim_alugueis` DATE NOT NULL,
   `valor_total_alugueis` DECIMAL(10,2) NOT NULL,
   `observacoes_alugueis` VARCHAR(45) NULL,
-  `status_alugueis` VARCHAR(20) NULL,
-  `carros_id_carros` INT NOT NULL,
+  -- `status_alugueis` VARCHAR(20) NULL,
+  `carros_id_carros` BIGINT NOT NULL,
   PRIMARY KEY (`id_alugueis`),
   INDEX `fk_alugueis_carros_idx` (`carros_id_carros` ASC),
   CONSTRAINT `fk_alugueis_carros`
