@@ -30,18 +30,43 @@ Após isso, o site estará acessível em http://localhost:5173/
 
 # 🚗 Documentação Back-End
 
-## ✅ Como executar?
+# AlugaAqui - Projeto Full Stack
 
-1. Rode o docker compose
-```
+Este projeto utiliza **Java com Spring Boot** no back end e **React com Vite** no front end. Abaixo estão os passos necessários para instalar e rodar a aplicação.
+
+---
+
+## ✅ Pré-requisitos
+
+### 🔧 Back-end (Java + Spring Boot)
+- **Java Development Kit (JDK) 17 ou superior**
+  - Baixe e instale o JDK: https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+  - Verifique a instalação com:
+    ```bash
+    java -version
+    ```
+- **Docker e Docker Compose**
+  - Instalação do Docker: https://docs.docker.com/get-docker/
+  - Verifique se o Docker está rodando com:
+    ```bash
+    docker -v
+    docker compose version
+    ```
+
+### 🌐 Front-end (React + Vite)
+- **Node.js (versão 18 ou superior)**
+  - Instale: https://nodejs.org/
+  - Verifique com:
+    ```bash
+    node -v
+    npm -v
+    ```
+
+---
+
+## 🚀 Como rodar o projeto
+
+### 1. Suba o container com Docker
+```bash
 docker compose up
-```
-2. Crie o banco
-- importando o arquivo ou colando o código em forma de SQL 
-3. Rode o java:
-   
-- Entre no arquivo AlugaAquiApplication.java e no campo Run and Debug no vs code
-- No InteliJJ use o campo de RUN dele
-- Verifique em localhost:8080/carros : deverá retornar um json
-4. Acesse o front-end
-- conforme descrtio no primeiro campo de **Instalação** Acesse a pagina http://localhost:5173/ e você terá acesso ao front-end consumido os dados do back-end
+
