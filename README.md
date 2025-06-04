@@ -30,10 +30,6 @@ Após isso, o site estará acessível em http://localhost:5173/
 
 # 🚗 Documentação Back-End
 
-# AlugaAqui - Projeto Full Stack
-
-Este projeto utiliza **Java com Spring Boot** no back end e **React com Vite** no front end. Abaixo estão os passos necessários para instalar e rodar a aplicação.
-
 ---
 
 ## ✅ Pré-requisitos
@@ -52,17 +48,6 @@ Este projeto utiliza **Java com Spring Boot** no back end e **React com Vite** n
     docker -v
     docker compose version
     ```
-
-### 🌐 Front-end (React + Vite)
-- **Node.js (versão 18 ou superior)**
-  - Instale: https://nodejs.org/
-  - Verifique com:
-    ```bash
-    node -v
-    npm -v
-    ```
-
----
 
 ## 🚀 Como rodar o projeto
 
